@@ -5,6 +5,9 @@ https://packaging.python.org/en/latest/tutorials/creating-documentation/
 https://github.com/settings/tokens
 Commento
 
+
+
+
 # Set the absolute path of running bash script
 ABSPathScript=$( dirname -- "$( readlink -f -- "$0"; )"; )
 template_directory="$ABSPathScript/TEMPLATE"
@@ -12,6 +15,7 @@ export template_directory
 
 echo "script running in: $ABSPathScript"
 
+script_dir=$(pwd)
 # Set the parameters
 token=$1
 python_version=$2

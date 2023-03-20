@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Create the project structure
-<<Commento
 touch "$project_directory/README.md"
 
 # Changes all placeholders inside template file
@@ -24,17 +23,11 @@ echo "---Created project structure in $project_directory"
 cd "$project_directory"
 mkdir .venv # In this way pyenv and pipenv create the virtualenv inside this directory instead than default directory
 
-# Check if the specified python version is installed
-#if [ "$(pyenv versions | grep $python_version | head -1)" -eq "" ]; then
-#  echo "---Installing python version $python_version"
-#  pyenv install $python_version
-#else
-#  echo "what?"
-#fi
-Commento
 
-echo "$(pyenv versions | grep $python_version)"
 
 if [ "$(pyenv versions | grep $python_version | head -1)" = "" ]; then
+  echo "---Installing python version $python_version"
   pyenv install $python_version
 fi
+
+cd "$script_dir"

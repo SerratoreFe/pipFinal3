@@ -13,15 +13,6 @@ else
 fi
 echo
 
-echo "---Create project structure"
-. "$t_dir/create_project_structure.sh"
-if [ $? -eq "1" ]; then
-  exit 1
-else
-  echo "---Project structure created succesfully"
-fi
-
-
 echo "---Check parameters"
 . "$t_dir/check_parameters.sh"
 if [ $? -eq "1" ]; then
@@ -30,7 +21,6 @@ else
   echo "---Parameters checked succesfully"
 fi
 
-
 echo "---Check directory existance"
 . "$t_dir/create_project_directory.sh"
 if [ $? -eq "1" ]; then
@@ -38,7 +28,6 @@ if [ $? -eq "1" ]; then
 else
   echo "---Directory checked succesfully"
 fi
-
 
 echo "---Create project structure"
 . "$t_dir/create_project_structure.sh"

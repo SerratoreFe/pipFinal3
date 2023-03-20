@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Check if the template directory exists
 if [ ! -d "$template_directory" ]; then
   echo 'Error: Template directory does not exist.' >&2
@@ -11,6 +10,20 @@ if ! [ -x "$(command -v ssh)" ]; then
   exit 1
 fi
 
+if [ ! -e ~/.ssh/id_rsa.pub ]; then
+    echo "Error: public key doesn't exists."
+    exit 1
+fi
+
+if [ ! -e ~/.ssh/id_rsa ]; then
+    echo "Error: private key doesn't exists."
+    exit 1
+fi
+
+if [ ! -e ~/.ssh/known_hosts ]; then
+    echo "Error: known_host file doesn't exists."
+    exit 1
+fi
 
 # Check if the template files exist
 if [ ! -f "$template_directory/pyproject.toml" ] || [ ! -f "$template_directory/LICENSE" ]; then
