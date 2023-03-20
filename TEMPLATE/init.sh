@@ -17,10 +17,10 @@ echo "script running in: $ABSPathScript"
 
 script_dir=$(pwd)
 # Set the parameters
-token=$1
-python_version=$2
-project_name=$3
-project_directory=$4
+# token=$1
+python_version=$1
+project_name=$2
+project_directory=$3
 
 #Set Local Variable
 username="SerratoreFe"
