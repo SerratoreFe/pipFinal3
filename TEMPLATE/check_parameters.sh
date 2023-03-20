@@ -6,6 +6,12 @@ if [ ! -d "$template_directory" ]; then
   exit 1
 fi
 
+if ! [ -x "$(command -v ssh)" ]; then
+  echo 'Error: openssh-client does not exists.' >&2
+  exit 1
+fi
+
+
 # Check if the template files exist
 if [ ! -f "$template_directory/pyproject.toml" ] || [ ! -f "$template_directory/LICENSE" ]; then
   echo 'Error: Template files do not exist.' >&2
