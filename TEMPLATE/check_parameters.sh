@@ -62,7 +62,7 @@ fi
 echo "3. Check on installed tools passed!"
 
 # Check if all parameters are provided
-if [ -z "$python_version" ] || [ -z "$project_name" ] || [ -z "$project_directory" ]; then
+if [ -z "$token" ] || [ -z "$python_version" ] || [ -z "$project_name" ] || [ -z "$project_directory" ]; then
   echo "Error: All parameters are required. Please provide the token, python version, project name and project directory." >&2
   exit 1
 fi
