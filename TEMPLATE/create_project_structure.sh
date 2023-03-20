@@ -24,7 +24,6 @@ cd "$project_directory"
 mkdir .venv # In this way pyenv and pipenv create the virtualenv inside this directory instead than default directory
 
 
-
 if [ "$(pyenv versions | grep $python_version | head -1)" = "" ]; then
   echo "---Installing python version $python_version"
   pyenv install $python_version

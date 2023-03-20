@@ -28,6 +28,7 @@ if [ $? -eq "1" ]; then
 else
   echo "---Directory checked succesfully"
 fi
+echo
 
 echo "---Create project structure"
 . "$t_dir/create_project_structure.sh"
@@ -36,8 +37,8 @@ if [ $? -eq "1" ]; then
 else
   echo "---Project structure created succesfully"
 fi
+echo
 
-echo "prova"
 echo "---Create virtual environment"
 . "$t_dir/create_virtual_environment.sh"
 if [ $? -eq "1" ]; then
